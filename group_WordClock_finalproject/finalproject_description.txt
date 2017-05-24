@@ -1,0 +1,7 @@
+In this final project, I designed, built, and wired a word clock powered by an Arduino. I have also linked a GUI to processing for settting the time. Currently, it requires the user to plug in the USB cable into a computer to set the time, and to plug in a 9V power adapter. Once the time has been set, the USB can be disconnected and the clock will run as it should.
+
+As for the actual guts of the machine, the Arduino powers 16 shift registers, which each control 8 LEDS (except for the last one, which only powers 1). There are 121 LEDS that can each be controlled individually, meaning that if I wanted to change the lettering board, I would only have to change the code itself and not do any extra wiring.
+
+One of the major unexpected problems was the whole entire process. I redesigned the wiring many times, switching from LED strips to word-linked LEDS to individually linked LEDS. I failed about 8 times to print my circuit board, and the wiring was too long so I had to ziptie the size down.
+
+All in all, this was a very fun and rewarding project, and I plan to make improvements upon it in the future. Perhaps adding physical buttons to change the time so the USB is no longer needed, or making the box thinner.
