@@ -14,6 +14,13 @@ http://imgur.com/a/dtLSy
 
 used individually addressed LEDs, which have shift registers built into them. In hindsight, I would have preferred to use these individually addressable LEDs, but the journey was fun and exciting to jump into as a dip into the world of electrical engineering. Also, I have a word clock that I can proudly label as my own invention, with my own spin onto it.
 
-Most of the trouble came from the PCB that held all 16 shift registers. I printed about 9 of them before I could root out the problem and fix the diagram in Eagle.
+The general layout of the design:
+- Arduino provides power, ground, and the 3 IO pins needed to operate a shift register
+- 16 shift registers are placed on a PCB, which was designed so that the end of each shift register leads to the beginning of another
+- each shift register controls 8 LEDs, with the last shift register only controlling one LED
+- all LEDs are grounded
 
+Because the shift registers can only have 8 outputs, and my grid is 11x11, the spacing of the LEDS is up to discretion. I tried to make it in rows for ease of programability.
+
+To light up the LEDs, you need to send 16 bytes of data to the shift registers. The first byte is sent to the last shift register, and the last byte is sent to the first shift register. To know which byte to send, look at the bottom right grid in my excel sheet titled lettering. The reading is from left to right, top to bottom. Just pick the words you want to light up, and convert the binary to decimal. 
 
